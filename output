@@ -1,0 +1,77 @@
+sudo /opt/exabgp-3.4.16/sbin/exabgp -e ~/gitlab/nxg-exabgp-suit/conf/message-handler.env ~/gitlab/nxg-exabgp-suit/conf/bgp-message-dev.cfg
+exabgp: 21435  reactor       Performing reload of exabgp 3.4.16
+exabgp: 21435  configuration loading | neighbor 10.6.5.121 {
+exabgp: 21435  configuration loading |     description "Message handler";
+exabgp: 21435  configuration loading |     router-id 127.0.0.1;
+exabgp: 21435  configuration loading |     local-address 10.6.5.124;
+exabgp: 21435  configuration loading |     local-as 65518;
+exabgp: 21435  configuration loading |     peer-as 65517;
+exabgp: 21435  configuration loading |     hold-time 90;
+exabgp: 21435  configuration loading |     family {
+exabgp: 21435  configuration loading |         ipv4 unicast;
+exabgp: 21435  configuration loading |     }
+exabgp: 21435  configuration loading |
+exabgp: 21435  configuration loading |     process message-handler {
+exabgp: 21435  configuration loading |         run /usr/bin/python /home/pugna/gitlab/nxg-exabgp-suit/message_handler.py;
+exabgp: 21435  configuration loading |         encoder json;
+exabgp: 21435  configuration loading |         receive {
+exabgp: 21435  configuration loading |             notification {
+exabgp: 21435  configuration loading |                 parsed;
+exabgp: 21435  configuration loading |                 packets;
+exabgp: 21435  configuration loading |                 consolidated;
+exabgp: 21435  configuration loading |             }
+exabgp: 21435  configuration loading |
+exabgp: 21435  configuration loading |             open {
+exabgp: 21435  configuration loading |                 parsed;
+exabgp: 21435  configuration loading |                 packets;
+exabgp: 21435  configuration loading |                 consolidated;
+exabgp: 21435  configuration loading |             }
+exabgp: 21435  configuration loading |             keepalive {
+exabgp: 21435  configuration loading |                 parsed;
+exabgp: 21435  configuration loading |                 packets;
+exabgp: 21435  configuration loading |                 consolidated;
+exabgp: 21435  configuration loading |             }
+exabgp: 21435  configuration loading |
+exabgp: 21435  configuration loading |             update {
+exabgp: 21435  configuration loading |                 parsed;
+exabgp: 21435  configuration loading |                 packets;
+exabgp: 21435  configuration loading |                 consolidated;
+exabgp: 21435  configuration loading |             }
+exabgp: 21435  configuration loading |
+exabgp: 21435  configuration loading |             refresh {
+exabgp: 21435  configuration loading |                 parsed;
+exabgp: 21435  configuration loading |                 packets;
+exabgp: 21435  configuration loading |                 consolidated;
+exabgp: 21435  configuration loading |             }
+exabgp: 21435  configuration loading |
+exabgp: 21435  configuration loading |             operational {
+exabgp: 21435  configuration loading |                 parsed;
+exabgp: 21435  configuration loading |                 packets;
+exabgp: 21435  configuration loading |                 consolidated;
+exabgp: 21435  configuration loading |             }
+exabgp: 21435  configuration loading |             neighbor-changes;
+exabgp: 21435  configuration loading |             update;
+exabgp: 21435  configuration loading |         }
+exabgp: 21435  configuration loading |     }
+exabgp: 21435  configuration loading | }
+exabgp: 21435  configuration parsing | configuration | 'neighbor' '10.6.5.121' '{'
+exabgp: 21435  configuration parsing | neighbor      | 'description' '"message' 'handler"' ';'
+exabgp: 21435  configuration parsing | neighbor      | 'router-id' '127.0.0.1' ';'
+exabgp: 21435  configuration parsing | neighbor      | 'local-address' '10.6.5.124' ';'
+exabgp: 21435  configuration parsing | neighbor      | 'local-as' '65518' ';'
+exabgp: 21435  configuration parsing | neighbor      | 'peer-as' '65517' ';'
+exabgp: 21435  configuration parsing | neighbor      | 'hold-time' '90' ';'
+exabgp: 21435  configuration parsing | neighbor      | 'family' '{'
+exabgp: 21435  configuration parsing | family        | 'ipv4' 'unicast' ';'
+exabgp: 21435  configuration parsing | family        | '}'
+exabgp: 21435  configuration parsing | neighbor      | 'process' 'message-handler' '{'
+exabgp: 21435  configuration parsing | process       | 'run' '/usr/bin/python /home/pugna/gitlab/nxg-exabgp-suit/message_handler.py' ';'
+exabgp: 21435  configuration parsing | process       | 'encoder' 'json' ';'
+exabgp: 21435  configuration parsing | process       | 'receive' '{'
+exabgp: 21435  configuration parsing | receive       | 'notification' '{'
+exabgp: 21435  configuration Problem with the configuration file, no change done
+exabgp: 21435  configuration
+exabgp: 21435  configuration syntax error in section receive
+exabgp: 21435  configuration line 16: notification {
+exabgp: 21435  configuration
+exabgp: 21435  configuration 
